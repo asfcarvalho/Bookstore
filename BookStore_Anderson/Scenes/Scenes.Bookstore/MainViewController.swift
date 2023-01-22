@@ -29,12 +29,19 @@ class MainViewController: UIHostingController<MainView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel?.send(action: .fetchBooks(0))
+        self.viewModel?.send(action: .onAppear)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        presentingViewController?.viewWillDisappear(true)
+        self.viewModel?.send(action: .onReload)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel?.send(action: .onReload)
     }
     
     func configureComunication() {
@@ -43,8 +50,10 @@ class MainViewController: UIHostingController<MainView> {
             switch action {
             case .dismiss:
                 self.viewModel?.send(action: .dismiss)
-            case .callNextPage(let id):
-                self.viewModel?.send(action: .callNextPage(id: id))
+            case .callNextPage(let index):
+                self.viewModel?.send(action: .callNextPage(index: index))
+            case .showDetail(let index):
+                self.viewModel?.send(action: .showDetail(index: index))
             }
         }.store(in: token)
     }

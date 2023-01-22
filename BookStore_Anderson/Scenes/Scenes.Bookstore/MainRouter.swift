@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import DataModule
 import BaseUI
 
 class MainRouter{
@@ -29,8 +30,12 @@ class MainRouter{
     
     func perform(action: Router.MainRouter.ViewOutput.Acion) {
         switch action {
-        case .sample:
-            break
+        case .showDetail(let item):
+            let vc = BookDetailRouter.build(item)
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .coverVertical
+            viewController?.present(vc, animated: true)
+            
         case .dismiss:
             viewController?.dismiss(animated: true)
         }
@@ -41,7 +46,7 @@ public extension Router {
     enum MainRouter {
         public enum ViewOutput {
             public enum Acion: Hashable {
-                case sample
+                case showDetail(_ item: BookItem)
                 case dismiss
             }
         }

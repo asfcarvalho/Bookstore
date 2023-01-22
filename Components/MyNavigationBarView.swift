@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 import BaseUI
-import Common
 
 public extension ViewModel {
     enum MyNavigationBar {
