@@ -20,6 +20,9 @@ struct MainView: View {
     public var output = MyObservableObject<ViewModel.Main.ViewOutput.Action>()
     
     private var token = CancelBag()
+    var imageWidth = (UIScreen.screenWidth / 2) - 32
+    var imageHeight = (UIScreen.screenWidth * 0.7) - 32
+    @State var isFiltering: Bool = true
     
     init(input: MainViewModel) {
         self.input = input
@@ -29,16 +32,22 @@ struct MainView: View {
         VStack {
             HStack(spacing: 0) {
                 Spacer()
-                Text("Show favorites")
-                    .font(.title2.bold())
-                Toggle("", isOn: $input.isFiltering)
-                    .frame(width:60)
+                Button {
+                    output.value.send(.filterTapped)
+                } label: {
+                    Text("Show favorites")
+                        .font(.title3.bold())
+                    Image(systemName: input.filterButton)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25)
+                }.foregroundColor(Color.black)
             }.padding()
             ScrollView {
                 VStack {
                     if let books = input.booksFiltered {
-                        LazyVGrid(columns: [GridItem(.fixed((UIScreen.screenWidth / 2) - 32), spacing: 16),
-                                            GridItem(.fixed((UIScreen.screenWidth / 2) - 32), spacing: 16)]) {
+                        LazyVGrid(columns: [GridItem(.fixed(imageWidth), spacing: 16),
+                                            GridItem(.fixed(imageWidth), spacing: 16)]) {
                             ForEach(books.indices, id: \.self) { index in
                                 HStack {
                                     setItem(books[index].thumbnail)
@@ -66,15 +75,28 @@ struct MainView: View {
     
     private func setItem(_ url: String) -> some View {
         AsyncImage(
-            url: URL(string: url),
-            content: { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: (UIScreen.screenWidth / 2) - 32, height: (UIScreen.screenWidth * 0.7) - 32)
-            },
-            placeholder: {
-                ProgressView()
-            }).frame(width: (UIScreen.screenWidth / 2) - 32, height: (UIScreen.screenWidth * 0.7) - 32)
+            url: URL(string: url)) { phase in
+                if let image = phase.image {
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: imageWidth, height: imageHeight)
+                } else if let error = phase.error {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.3))
+                        .overlay {
+                            Image(systemName: "photo.artframe")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: imageWidth / 2)
+                                .foregroundColor(Color.gray)
+                        }
+                    let _ = debugPrint(error)
+                } else {
+                    ProgressView()
+                }
+            }
+        
+        .frame(width: imageWidth, height: imageHeight)
             .clipped()
     }
 }

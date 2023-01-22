@@ -19,6 +19,12 @@ class MainViewModel: ObservableObject {
     @Published var fetchStatus: FetchStatus = .isFetching
     @Published var isFiltering: Bool = false
     
+    var filterButton: String {
+        get {
+            isFiltering ? "checkmark.circle.fill" : "checkmark.circle"
+        }
+    }
+    
     private var pageIndex = 0
     private var booksFavorite: [String] = []
     private var books: [BookItem] = []
@@ -34,7 +40,6 @@ class MainViewModel: ObservableObject {
     init(_ books: [BookItem] = []) {
         self.booksFiltered = books
         favoriteStorage = BookFavoriteStorageRepository()
-        configureComunication()
     }
     
 }
@@ -51,7 +56,7 @@ extension MainViewModel {
             
         case .fetchFavorites:
             fetchFavorites()
-            self.isFiltering = isFiltering
+            setBooksFilter()
             
         case .dismiss:
             router?.perform(action: .dismiss)
@@ -70,6 +75,10 @@ extension MainViewModel {
         case .showDetail(let index):
             let book = booksFiltered[index]
             router?.perform(action: .showDetail(book))
+            
+        case .filterTapped:
+            isFiltering.toggle()
+            setBooksFilter()
         }
     }
     
@@ -103,18 +112,28 @@ extension MainViewModel {
         }
     }
     
-    private func configureComunication() {
-        $isFiltering
-            .map({ isFiltering in
-                if isFiltering {
-                    return Array(Set(self.books.filter({
-                        self.booksFavorite.contains($0.id)
-                    })))
-                } else {
-                    return self.books
-                }
-            })
-            .assign(to: &$booksFiltered)
+    private func setBooksFilter() {
+        if isFiltering {
+            self.booksFiltered = getUniqueBooks(self.books.filter({
+                self.booksFavorite.contains($0.id)
+            }))
+        } else {
+            self.booksFiltered = self.books
+        }
+    }
+    
+    private func getUniqueBooks(_ filtered: [BookItem]) -> [BookItem] {
+        var unique: [String: String] = [:]
+        var bookUnique: [BookItem] = []
+        
+        filtered.forEach({
+            if unique[$0.id]?.isEmpty ?? true {
+                unique[$0.id] = $0.id
+                bookUnique.append($0)
+            }
+        })
+        
+        return bookUnique
     }
 }
 
@@ -125,6 +144,7 @@ public extension ViewModel {
                 case dismiss
                 case callNextPage(index: Int)
                 case showDetail(index: Int)
+                case filterTapped
             }
         }
         
@@ -137,6 +157,7 @@ public extension ViewModel {
                 case onAppear
                 case onReload
                 case fetchFavorites
+                case filterTapped
             }
         }
     }
