@@ -22,6 +22,8 @@
 		193B086D297AE2D70055EB14 /* BookStore_AndersonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193B086C297AE2D70055EB14 /* BookStore_AndersonUITests.swift */; };
 		193B086F297AE2D70055EB14 /* BookStore_AndersonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193B086E297AE2D70055EB14 /* BookStore_AndersonUITestsLaunchTests.swift */; };
 		1946AD16297C61D400ED782D /* BookItem+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946AD15297C61D400ED782D /* BookItem+Mapper.swift */; };
+		194C3730299666CC00F30861 /* BookStoreFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C372F299666CC00F30861 /* BookStoreFetch.swift */; };
+		194C37332996695200F30861 /* BookStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C37322996695200F30861 /* BookStoreProtocol.swift */; };
 		196EEE43297C0D920066B315 /* APICalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE42297C0D920066B315 /* APICalling.swift */; };
 		196EEE45297C0DAC0066B315 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE44297C0DAC0066B315 /* APIRequest.swift */; };
 		196EEE47297C0DCE0066B315 /* APIStringsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE46297C0DCE0066B315 /* APIStringsDefault.swift */; };
@@ -178,6 +180,8 @@
 		193B086C297AE2D70055EB14 /* BookStore_AndersonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_AndersonUITests.swift; sourceTree = "<group>"; };
 		193B086E297AE2D70055EB14 /* BookStore_AndersonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_AndersonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1946AD15297C61D400ED782D /* BookItem+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookItem+Mapper.swift"; sourceTree = "<group>"; };
+		194C372F299666CC00F30861 /* BookStoreFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreFetch.swift; sourceTree = "<group>"; };
+		194C37322996695200F30861 /* BookStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreProtocol.swift; sourceTree = "<group>"; };
 		196EEE42297C0D920066B315 /* APICalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalling.swift; sourceTree = "<group>"; };
 		196EEE44297C0DAC0066B315 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		196EEE46297C0DCE0066B315 /* APIStringsDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStringsDefault.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 		1901536B297AE9A20089E181 /* DataModule */ = {
 			isa = PBXGroup;
 			children = (
+				194C37312996693200F30861 /* Protocols */,
+				194C372D299666AB00F30861 /* Adapters */,
 				1946AD14297C613C00ED782D /* Mappers */,
 				19F1FCA9297C2AB100E78B69 /* UserInterface */,
 				19F1FC95297C194500E78B69 /* Modules */,
@@ -431,6 +437,30 @@
 				1946AD15297C61D400ED782D /* BookItem+Mapper.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		194C372D299666AB00F30861 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				194C372E299666BA00F30861 /* BookStore */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		194C372E299666BA00F30861 /* BookStore */ = {
+			isa = PBXGroup;
+			children = (
+				194C372F299666CC00F30861 /* BookStoreFetch.swift */,
+			);
+			path = BookStore;
+			sourceTree = "<group>";
+		};
+		194C37312996693200F30861 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				194C37322996695200F30861 /* BookStoreProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		196EEE41297C0D810066B315 /* BaseAPI */ = {
@@ -961,11 +991,13 @@
 				19F1FC99297C1B0500E78B69 /* Book.swift in Sources */,
 				19F1FC9F297C1B7400E78B69 /* ImageLink.swift in Sources */,
 				1946AD16297C61D400ED782D /* BookItem+Mapper.swift in Sources */,
+				194C37332996695200F30861 /* BookStoreProtocol.swift in Sources */,
 				196EEE47297C0DCE0066B315 /* APIStringsDefault.swift in Sources */,
 				19F1FC9D297C1B5A00E78B69 /* VolumeInfo.swift in Sources */,
 				19F1FC94297C190400E78B69 /* BookstoreDataSource.swift in Sources */,
 				196EEE43297C0D920066B315 /* APICalling.swift in Sources */,
 				19F1FCAB297C2ACD00E78B69 /* BookItem.swift in Sources */,
+				194C3730299666CC00F30861 /* BookStoreFetch.swift in Sources */,
 				196EEE45297C0DAC0066B315 /* APIRequest.swift in Sources */,
 				1901538A297AE9C10089E181 /* Combine+CancelBag.swift in Sources */,
 				1901536E297AE9A20089E181 /* DataModule.docc in Sources */,

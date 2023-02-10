@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - Bookstore
-public struct Bookstore: Codable {
-    public let kind: String?
-    public let totalItems: Int?
-    public let items: [Book]?
+internal struct Bookstore: Codable {
+    internal let kind: String?
+    internal let totalItems: Int?
+    internal let items: [Book]?
 }

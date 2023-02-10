@@ -18,7 +18,7 @@ internal extension Book {
     }
 }
 
-public extension Sequence where Element == Book {
+internal extension Sequence where Element == Book {
     
     func asBookArray() -> [BookItem] {
         self.map { $0.asBook() }

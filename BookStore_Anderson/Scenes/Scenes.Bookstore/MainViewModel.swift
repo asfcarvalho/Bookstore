@@ -29,6 +29,7 @@ class MainViewModel: ObservableObject {
     private var booksFavorite: [String] = []
     private var books: [BookItem] = []
     private var favoriteStorage: BookFavoriteRepositoryProtocol!
+    private var bookStoreDataSource: BookStoreFetchProtocol!
     
     enum FetchStatus {
         case isFetching
@@ -37,9 +38,12 @@ class MainViewModel: ObservableObject {
     
     var router: MainRouter?
     
-    init(_ books: [BookItem] = []) {
+    init(_ books: [BookItem] = [],
+         favoriteStorage: BookFavoriteRepositoryProtocol = BookFavoriteStorageRepository(),
+         bookStoreDataSource: BookStoreFetchProtocol = BookStoreFetch()) {
         self.booksFiltered = books
-        favoriteStorage = BookFavoriteStorageRepository()
+        self.favoriteStorage = favoriteStorage
+        self.bookStoreDataSource = bookStoreDataSource
     }
     
 }
@@ -83,14 +87,14 @@ extension MainViewModel {
     }
     
     private func fetchBook(_ page: Int) {
-        BookstoreDataSource.shared.booksFetch(page) {[weak self] result in
+        bookStoreDataSource.booksFetch(page) {[weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let bookStore):
                 if self.books.isEmpty {
-                    self.books = bookStore.items?.asBookArray() ?? []
+                    self.books = bookStore
                 } else {
-                    self.books.append(contentsOf: bookStore.items?.asBookArray() ?? [])
+                    self.books.append(contentsOf: bookStore ?? [])
                 }
                 self.booksFiltered = self.books
                 self.fetchStatus = .fetched

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class BookstoreDataSource {
+internal class BookstoreDataSource {
     
     public static let shared = BookstoreDataSource()
     private var token = CancelBag()
@@ -15,7 +15,7 @@ public class BookstoreDataSource {
     
     let URLDefault = APIStrings.baseUrl
         
-    public func booksFetch(_ page: Int, callBack: @escaping (Result<Bookstore, Error>) -> Void) {
+    internal func booksFetch(_ page: Int, callBack: @escaping (Result<Bookstore, Error>) -> Void) {
         
         let apiRequest = APIRequest()
         let urlString = String(format: "\(URLDefault)\(url)", page)
