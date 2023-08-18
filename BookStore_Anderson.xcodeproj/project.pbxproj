@@ -26,22 +26,11 @@
 		196EEE43297C0D920066B315 /* APICalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE42297C0D920066B315 /* APICalling.swift */; };
 		196EEE45297C0DAC0066B315 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE44297C0DAC0066B315 /* APIRequest.swift */; };
 		196EEE47297C0DCE0066B315 /* APIStringsDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EEE46297C0DCE0066B315 /* APIStringsDefault.swift */; };
-		197D9904297C72BC00E7F83A /* LocalDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 197D9903297C72BC00E7F83A /* LocalDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		197D9907297C72BC00E7F83A /* LocalDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197D9901297C72BC00E7F83A /* LocalDatabase.framework */; };
-		197D9908297C72BC00E7F83A /* LocalDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 197D9901297C72BC00E7F83A /* LocalDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		197D990E297C731600E7F83A /* BookFavoriteRLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D990D297C731600E7F83A /* BookFavoriteRLM.swift */; };
-		197D9911297C737800E7F83A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 197D9910297C737800E7F83A /* Realm */; };
-		197D9913297C737800E7F83A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 197D9912297C737800E7F83A /* RealmSwift */; };
-		197D9916297C747900E7F83A /* BookFavoriteRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D9915297C747900E7F83A /* BookFavoriteRepositoryProtocol.swift */; };
-		197D9918297C752700E7F83A /* BaseStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D9917297C752700E7F83A /* BaseStorageRepository.swift */; };
-		197D991B297C759F00E7F83A /* BookFavoriteStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D991A297C759F00E7F83A /* BookFavoriteStorageRepository.swift */; };
-		197D991E297C777700E7F83A /* Object+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D991D297C777700E7F83A /* Object+Creation.swift */; };
 		197D9946297C86AD00E7F83A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8BB91297B30E80004AF61 /* Common.framework */; };
 		197D9953297C872B00E7F83A /* BaseUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 197D9952297C872B00E7F83A /* BaseUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		197D9956297C872B00E7F83A /* BaseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197D9950297C872B00E7F83A /* BaseUI.framework */; };
 		197D9957297C872B00E7F83A /* BaseUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 197D9950297C872B00E7F83A /* BaseUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		197D995C297C873900E7F83A /* typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D995B297C873900E7F83A /* typealias.swift */; };
-		197D995F297C88BD00E7F83A /* Favorite+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D995E297C88BD00E7F83A /* Favorite+Transform.swift */; };
 		19B8BB64297B30540004AF61 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BB60297B30540004AF61 /* MainRouter.swift */; };
 		19B8BB65297B30540004AF61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BB61297B30540004AF61 /* MainViewController.swift */; };
 		19B8BB66297B30540004AF61 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BB62297B30540004AF61 /* MainView.swift */; };
@@ -60,6 +49,8 @@
 		19E56BFE2A8F94D7005F1344 /* bookList.json in Resources */ = {isa = PBXBuildFile; fileRef = 19E56BFD2A8F94D7005F1344 /* bookList.json */; };
 		19E56C012A8F953E005F1344 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E56C002A8F953E005F1344 /* MainViewModelTests.swift */; };
 		19E56C042A8F967F005F1344 /* MockBookStoreFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E56C032A8F967F005F1344 /* MockBookStoreFetch.swift */; };
+		19E56C0D2A8FA907005F1344 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8BB91297B30E80004AF61 /* Common.framework */; };
+		19E56C0E2A8FA907005F1344 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8BB91297B30E80004AF61 /* Common.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		19F1FC94297C190400E78B69 /* BookstoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1FC93297C190400E78B69 /* BookstoreDataSource.swift */; };
 		19F1FC97297C195800E78B69 /* Bookstore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1FC96297C195800E78B69 /* Bookstore.swift */; };
 		19F1FC99297C1B0500E78B69 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F1FC98297C1B0500E78B69 /* Book.swift */; };
@@ -109,13 +100,6 @@
 			remoteGlobalIDString = 193B0847297AE2D60055EB14;
 			remoteInfo = BookStore_Anderson;
 		};
-		197D9905297C72BC00E7F83A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 193B0840297AE2D60055EB14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 197D9900297C72BC00E7F83A;
-			remoteInfo = LocalDatabase;
-		};
 		197D9948297C86AD00E7F83A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 193B0840297AE2D60055EB14 /* Project object */;
@@ -144,6 +128,13 @@
 			remoteGlobalIDString = 19B8BBA0297B31130004AF61;
 			remoteInfo = Components;
 		};
+		19E56C0F2A8FA907005F1344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 193B0840297AE2D60055EB14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19B8BB90297B30E80004AF61;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -153,11 +144,21 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				197D9908297C72BC00E7F83A /* LocalDatabase.framework in Embed Frameworks */,
 				19B8BB98297B30E80004AF61 /* Common.framework in Embed Frameworks */,
 				19015380297AE9A20089E181 /* DataModule.framework in Embed Frameworks */,
 				19B8BBA8297B31130004AF61 /* Components.framework in Embed Frameworks */,
 				197D9957297C872B00E7F83A /* BaseUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E56C112A8FA907005F1344 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				19E56C0E2A8FA907005F1344 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,17 +188,9 @@
 		196EEE42297C0D920066B315 /* APICalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalling.swift; sourceTree = "<group>"; };
 		196EEE44297C0DAC0066B315 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		196EEE46297C0DCE0066B315 /* APIStringsDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStringsDefault.swift; sourceTree = "<group>"; };
-		197D9901297C72BC00E7F83A /* LocalDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LocalDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		197D9903297C72BC00E7F83A /* LocalDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalDatabase.h; sourceTree = "<group>"; };
-		197D990D297C731600E7F83A /* BookFavoriteRLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFavoriteRLM.swift; sourceTree = "<group>"; };
-		197D9915297C747900E7F83A /* BookFavoriteRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFavoriteRepositoryProtocol.swift; sourceTree = "<group>"; };
-		197D9917297C752700E7F83A /* BaseStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStorageRepository.swift; sourceTree = "<group>"; };
-		197D991A297C759F00E7F83A /* BookFavoriteStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFavoriteStorageRepository.swift; sourceTree = "<group>"; };
-		197D991D297C777700E7F83A /* Object+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Creation.swift"; sourceTree = "<group>"; };
 		197D9950297C872B00E7F83A /* BaseUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		197D9952297C872B00E7F83A /* BaseUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUI.h; sourceTree = "<group>"; };
 		197D995B297C873900E7F83A /* typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typealias.swift; sourceTree = "<group>"; };
-		197D995E297C88BD00E7F83A /* Favorite+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Transform.swift"; sourceTree = "<group>"; };
 		19B8BB60297B30540004AF61 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		19B8BB61297B30540004AF61 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		19B8BB62297B30540004AF61 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -233,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E56C0D2A8FA907005F1344 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +242,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197D9907297C72BC00E7F83A /* LocalDatabase.framework in Frameworks */,
 				19B8BB97297B30E80004AF61 /* Common.framework in Frameworks */,
 				1901537F297AE9A20089E181 /* DataModule.framework in Frameworks */,
 				19B8BBA7297B31130004AF61 /* Components.framework in Frameworks */,
@@ -267,15 +260,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		197D98FE297C72BC00E7F83A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				197D9913297C737800E7F83A /* RealmSwift in Frameworks */,
-				197D9911297C737800E7F83A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +332,6 @@
 				19B8BB7C297B307B0004AF61 /* BaseUITests */,
 				19B8BB92297B30E80004AF61 /* Common */,
 				19B8BBA2297B31130004AF61 /* Components */,
-				197D9902297C72BC00E7F83A /* LocalDatabase */,
 				197D9951297C872B00E7F83A /* BaseUI */,
 				193B0849297AE2D60055EB14 /* Products */,
 				197D9945297C86AD00E7F83A /* Frameworks */,
@@ -365,7 +348,6 @@
 				19015373297AE9A20089E181 /* DataModuleTests.xctest */,
 				19B8BB91297B30E80004AF61 /* Common.framework */,
 				19B8BBA1297B31130004AF61 /* Components.framework */,
-				197D9901297C72BC00E7F83A /* LocalDatabase.framework */,
 				197D9950297C872B00E7F83A /* BaseUI.framework */,
 			);
 			name = Products;
@@ -473,52 +455,6 @@
 			path = BaseAPI;
 			sourceTree = "<group>";
 		};
-		197D9902297C72BC00E7F83A /* LocalDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				197D995D297C88A100E7F83A /* Transforms */,
-				197D991C297C776500E7F83A /* Extensions */,
-				197D9919297C756900E7F83A /* Repositories */,
-				197D9914297C745800E7F83A /* Protocols */,
-				197D990C297C72FD00E7F83A /* Models */,
-				197D9903297C72BC00E7F83A /* LocalDatabase.h */,
-				197D9917297C752700E7F83A /* BaseStorageRepository.swift */,
-			);
-			path = LocalDatabase;
-			sourceTree = "<group>";
-		};
-		197D990C297C72FD00E7F83A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				197D990D297C731600E7F83A /* BookFavoriteRLM.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		197D9914297C745800E7F83A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				197D9915297C747900E7F83A /* BookFavoriteRepositoryProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		197D9919297C756900E7F83A /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				197D991A297C759F00E7F83A /* BookFavoriteStorageRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		197D991C297C776500E7F83A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				197D991D297C777700E7F83A /* Object+Creation.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		197D9945297C86AD00E7F83A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,14 +469,6 @@
 				197D995B297C873900E7F83A /* typealias.swift */,
 			);
 			path = BaseUI;
-			sourceTree = "<group>";
-		};
-		197D995D297C88A100E7F83A /* Transforms */ = {
-			isa = PBXGroup;
-			children = (
-				197D995E297C88BD00E7F83A /* Favorite+Transform.swift */,
-			);
-			path = Transforms;
 			sourceTree = "<group>";
 		};
 		19B8BB7C297B307B0004AF61 /* BaseUITests */ = {
@@ -646,14 +574,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		197D98FC297C72BC00E7F83A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				197D9904297C72BC00E7F83A /* LocalDatabase.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		197D994B297C872B00E7F83A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -689,10 +609,12 @@
 				19015366297AE9A20089E181 /* Sources */,
 				19015367297AE9A20089E181 /* Frameworks */,
 				19015368297AE9A20089E181 /* Resources */,
+				19E56C112A8FA907005F1344 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				19E56C102A8FA907005F1344 /* PBXTargetDependency */,
 			);
 			name = DataModule;
 			packageProductDependencies = (
@@ -735,7 +657,6 @@
 				1901537E297AE9A20089E181 /* PBXTargetDependency */,
 				19B8BB96297B30E80004AF61 /* PBXTargetDependency */,
 				19B8BBA6297B31130004AF61 /* PBXTargetDependency */,
-				197D9906297C72BC00E7F83A /* PBXTargetDependency */,
 				197D9955297C872B00E7F83A /* PBXTargetDependency */,
 			);
 			name = BookStore_Anderson;
@@ -780,28 +701,6 @@
 			productName = BookStore_AndersonUITests;
 			productReference = 193B0868297AE2D70055EB14 /* BookStore_AndersonUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		197D9900297C72BC00E7F83A /* LocalDatabase */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 197D9909297C72BC00E7F83A /* Build configuration list for PBXNativeTarget "LocalDatabase" */;
-			buildPhases = (
-				197D98FC297C72BC00E7F83A /* Headers */,
-				197D98FD297C72BC00E7F83A /* Sources */,
-				197D98FE297C72BC00E7F83A /* Frameworks */,
-				197D98FF297C72BC00E7F83A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LocalDatabase;
-			packageProductDependencies = (
-				197D9910297C737800E7F83A /* Realm */,
-				197D9912297C737800E7F83A /* RealmSwift */,
-			);
-			productName = LocalDatabase;
-			productReference = 197D9901297C72BC00E7F83A /* LocalDatabase.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		197D994F297C872B00E7F83A /* BaseUI */ = {
 			isa = PBXNativeTarget;
@@ -886,10 +785,6 @@
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 193B0847297AE2D60055EB14;
 					};
-					197D9900297C72BC00E7F83A = {
-						CreatedOnToolsVersion = 14.1;
-						LastSwiftMigration = 1410;
-					};
 					197D994F297C872B00E7F83A = {
 						CreatedOnToolsVersion = 14.1;
 						LastSwiftMigration = 1410;
@@ -914,7 +809,6 @@
 			);
 			mainGroup = 193B083F297AE2D60055EB14;
 			packageReferences = (
-				197D990F297C737800E7F83A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 193B0849297AE2D60055EB14 /* Products */;
 			projectDirPath = "";
@@ -927,7 +821,6 @@
 				19015372297AE9A20089E181 /* DataModuleTests */,
 				19B8BB90297B30E80004AF61 /* Common */,
 				19B8BBA0297B31130004AF61 /* Components */,
-				197D9900297C72BC00E7F83A /* LocalDatabase */,
 				197D994F297C872B00E7F83A /* BaseUI */,
 			);
 		};
@@ -966,13 +859,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		193B0866297AE2D70055EB14 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		197D98FF297C72BC00E7F83A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1068,19 +954,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		197D98FD297C72BC00E7F83A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				197D995F297C88BD00E7F83A /* Favorite+Transform.swift in Sources */,
-				197D991E297C777700E7F83A /* Object+Creation.swift in Sources */,
-				197D9916297C747900E7F83A /* BookFavoriteRepositoryProtocol.swift in Sources */,
-				197D9918297C752700E7F83A /* BaseStorageRepository.swift in Sources */,
-				197D991B297C759F00E7F83A /* BookFavoriteStorageRepository.swift in Sources */,
-				197D990E297C731600E7F83A /* BookFavoriteRLM.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		197D994C297C872B00E7F83A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1136,11 +1009,6 @@
 			target = 193B0847297AE2D60055EB14 /* BookStore_Anderson */;
 			targetProxy = 193B0869297AE2D70055EB14 /* PBXContainerItemProxy */;
 		};
-		197D9906297C72BC00E7F83A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 197D9900297C72BC00E7F83A /* LocalDatabase */;
-			targetProxy = 197D9905297C72BC00E7F83A /* PBXContainerItemProxy */;
-		};
 		197D9949297C86AD00E7F83A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 19B8BB90297B30E80004AF61 /* Common */;
@@ -1160,6 +1028,11 @@
 			isa = PBXTargetDependency;
 			target = 19B8BBA0297B31130004AF61 /* Components */;
 			targetProxy = 19B8BBA5297B31130004AF61 /* PBXContainerItemProxy */;
+		};
+		19E56C102A8FA907005F1344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19B8BB90297B30E80004AF61 /* Common */;
+			targetProxy = 19E56C0F2A8FA907005F1344 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1519,69 +1392,6 @@
 			};
 			name = Release;
 		};
-		197D990A297C72BC00E7F83A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asfcarvalho.LocalDatabase;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		197D990B297C72BC00E7F83A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asfcarvalho.LocalDatabase;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		197D9959297C872B00E7F83A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1828,15 +1638,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		197D9909297C72BC00E7F83A /* Build configuration list for PBXNativeTarget "LocalDatabase" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				197D990A297C72BC00E7F83A /* Debug */,
-				197D990B297C72BC00E7F83A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		197D9958297C872B00E7F83A /* Build configuration list for PBXNativeTarget "BaseUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1865,30 +1666,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		197D990F297C737800E7F83A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.34.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		197D9910297C737800E7F83A /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 197D990F297C737800E7F83A /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		197D9912297C737800E7F83A /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 197D990F297C737800E7F83A /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 193B0840297AE2D60055EB14 /* Project object */;
 }

@@ -54,8 +54,6 @@ class MainViewController: UIHostingController<MainView> {
                 self.viewModel?.send(action: .callNextPage(index: index))
             case .showDetail(let index):
                 self.viewModel?.send(action: .showDetail(index: index))
-            case .filterTapped:
-                self.viewModel?.send(action: .filterTapped)
             }
         }.store(in: token)
     }

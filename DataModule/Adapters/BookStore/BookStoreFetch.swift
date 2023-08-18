@@ -8,10 +8,9 @@
 import Foundation
 
 public class BookStoreFetch: BookStoreFetchProtocol {
-    
     public init() { }
     
-    public func booksFetch(_ page: Int, callBack: @escaping (Result<[BookItem], Error>) -> Void) {
+    public func booksFetch(_ page: Int, callBack: @escaping (Result<[BookItem], BookError>) -> Void) {
         BookstoreDataSource.shared.booksFetch(page) { result in
             switch result {
             case .success(let bookStore):

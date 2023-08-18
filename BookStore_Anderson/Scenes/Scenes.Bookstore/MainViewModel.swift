@@ -12,23 +12,14 @@ import Combine
 import DataModule
 import Common
 import BaseUI
-import LocalDatabase
 
 class MainViewModel: ObservableObject {
     @Published var booksFiltered: [BookItem] = []
     @Published var fetchStatus: FetchStatus = .isFetching
-    @Published var isFiltering: Bool = false
-    
-    var filterButton: String {
-        get {
-            isFiltering ? "checkmark.circle.fill" : "checkmark.circle"
-        }
-    }
-    
+        
     private var pageIndex = 0
     private var booksFavorite: [String] = []
     private var books: [BookItem] = []
-    private var favoriteStorage: BookFavoriteRepositoryProtocol!
     private var bookStoreDataSource: BookStoreFetchProtocol!
     
     enum FetchStatus {
@@ -39,10 +30,8 @@ class MainViewModel: ObservableObject {
     var router: MainRouter?
     
     init(_ books: [BookItem] = [],
-         favoriteStorage: BookFavoriteRepositoryProtocol = BookFavoriteStorageRepository(),
          bookStoreDataSource: BookStoreFetchProtocol = BookStoreFetch()) {
         self.booksFiltered = books
-        self.favoriteStorage = favoriteStorage
         self.bookStoreDataSource = bookStoreDataSource
     }
     
@@ -56,11 +45,7 @@ extension MainViewModel {
             send(action: .fetchBooks(pageIndex))
             
         case .onReload:
-            send(action: .fetchFavorites)
-            
-        case .fetchFavorites:
-            fetchFavorites()
-            setBooksFilter()
+            break
             
         case .dismiss:
             router?.perform(action: .dismiss)
@@ -69,20 +54,14 @@ extension MainViewModel {
             fetchStatus = .isFetching
             fetchBook(page)
 
-        case .callNextPage(let index):
-            if !isFiltering && booksFiltered.count - 3 == index {
-                pageIndex += 1
-                
-                send(action: .fetchBooks(pageIndex))
-            }
+        case .callNextPage:
+            pageIndex += 1
+            
+            send(action: .fetchBooks(pageIndex))
             
         case .showDetail(let index):
             let book = booksFiltered[index]
             router?.perform(action: .showDetail(book))
-            
-        case .filterTapped:
-            isFiltering.toggle()
-            setBooksFilter()
         }
     }
     
@@ -109,27 +88,6 @@ extension MainViewModel {
         }
     }
     
-    private func fetchFavorites() {
-        favoriteStorage.getAllFavorite { result in
-            switch result {
-            case .success(let favorites):
-                self.booksFavorite = favorites
-            case .failure(let failure):
-                debugPrint(failure)
-            }
-        }
-    }
-    
-    private func setBooksFilter() {
-        if isFiltering {
-            self.booksFiltered = getUniqueBooks(self.books.filter({
-                self.booksFavorite.contains($0.id)
-            }))
-        } else {
-            self.booksFiltered = self.books
-        }
-    }
-    
     private func getUniqueBooks(_ filtered: [BookItem]) -> [BookItem] {
         var unique: [String: String] = [:]
         var bookUnique: [BookItem] = []
@@ -152,7 +110,6 @@ public extension ViewModel {
                 case dismiss
                 case callNextPage(index: Int)
                 case showDetail(index: Int)
-                case filterTapped
             }
         }
         
@@ -164,8 +121,6 @@ public extension ViewModel {
                 case showDetail(index: Int)
                 case onAppear
                 case onReload
-                case fetchFavorites
-                case filterTapped
             }
         }
     }

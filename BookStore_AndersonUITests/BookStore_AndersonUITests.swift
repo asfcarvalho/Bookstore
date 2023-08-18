@@ -8,9 +8,14 @@
 import XCTest
 
 final class BookStore_AndersonUITests: XCTestCase {
+    
+    var app: XCUIApplication!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        app = XCUIApplication()
+        app.launchArguments = ["UI-TESTING"]
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -19,15 +24,32 @@ final class BookStore_AndersonUITests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        app = nil
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    func testBookMainView_WhenViewLoad_ThenDisplayBookList() throws {
+        // Arrange
+        app.launchEnvironment["JSON-URL"] = "bookList"
+        let list = app.scrollViews.otherElements.otherElements["bookListView"]
+                
+        // Act
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Assert
+        XCTAssertTrue(list.exists)
+    }
+    
+    func testBookMainView_WhenViewLoad_ThenNotDisplayBookList() throws {
+        // Arrange
+        app.launchEnvironment["JSON-URL"] = "bookListEmpty"
+        let listEmpty = app.staticTexts["bookListEmpty"]
+        XCUIApplication().scrollViews.otherElements.staticTexts["0"].tap()
+                                
+        // Act
+        app.launch()
+        
+        // Assert
+        XCTAssertTrue(listEmpty.exists)
     }
 
     func testLaunchPerformance() throws {

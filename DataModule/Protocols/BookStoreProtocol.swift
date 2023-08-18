@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol BookStoreFetchProtocol {
-    func booksFetch(_ page: Int, callBack: @escaping (Result<[BookItem], Error>) -> Void)
+    func booksFetch(_ page: Int, callBack: @escaping (Result<[BookItem], BookError>) -> Void)
 }

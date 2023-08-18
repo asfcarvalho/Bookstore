@@ -11,15 +11,12 @@ import SwiftUI
 import Combine
 import DataModule
 import BaseUI
-import LocalDatabase
 
 class BookDetailViewModel: ObservableObject {
     @Published var bookDetail: [BookDetail]?
-    @Published var isFavorite: Bool = false
     
     var router: BookDetailRouter?
     private var bookId: String?
-    private var favoriteStorage: BookFavoriteRepositoryProtocol!
     
     struct BookDetail: Hashable {
         let title: String?
@@ -29,7 +26,6 @@ class BookDetailViewModel: ObservableObject {
     init(_ bookItem: BookItem?) {
         bookId = bookItem?.id
         self.bookDetail = parseBook(bookItem)
-        favoriteStorage = BookFavoriteStorageRepository()
     }
     
 }
@@ -39,37 +35,6 @@ extension BookDetailViewModel {
         switch action {
         case .dismiss:
             router?.perform(action: .dismiss)
-        case .isFavorite:
-            favoriteStorage.getIsFavorite(bookId ?? "") { result in
-                switch result {
-                case .success(let isFavorite):
-                    self.isFavorite = isFavorite
-                case .failure(let failure):
-                    debugPrint(failure)
-                }
-            }
-        case .favoriteTapped:
-            guard let bookId = bookId else { return }
-            
-            if isFavorite {
-                favoriteStorage.saveFavorite(bookId) { result in
-                    switch result {
-                    case .success(let success):
-                        debugPrint(success)
-                    case .failure(let failure):
-                        debugPrint(failure)
-                    }
-                }
-            } else {
-                favoriteStorage.removeFavorite(bookId) { result in
-                    switch result {
-                    case .success(let success):
-                        debugPrint(success)
-                    case .failure(let failure):
-                        debugPrint(failure)
-                    }
-                }
-            }
         }
     }
     
@@ -109,15 +74,12 @@ public extension ViewModel {
         public enum ViewOutput {
             public enum Action: Hashable {
                 case dismiss
-                case favoriteTapped
             }
         }
         
         public enum ViewInput: Hashable {
             public enum Action: Hashable {
                 case dismiss
-                case isFavorite
-                case favoriteTapped
             }
         }
     }

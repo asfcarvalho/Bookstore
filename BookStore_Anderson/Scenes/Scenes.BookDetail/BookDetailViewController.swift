@@ -29,7 +29,6 @@ class BookDetailViewController: UIHostingController<BookDetailView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.send(action: .isFavorite)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +48,6 @@ class BookDetailViewController: UIHostingController<BookDetailView> {
             switch action {
             case .dismiss:
                 self.viewModel?.send(action: .dismiss)
-            case .favoriteTapped:
-                self.viewModel?.send(action: .favoriteTapped)
             }
         }.store(in: token)
     }

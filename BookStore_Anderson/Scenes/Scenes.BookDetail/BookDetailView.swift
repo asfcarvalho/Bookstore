@@ -29,14 +29,6 @@ struct BookDetailView: View {
         VStack {
             navigationBar
             VStack(spacing: 8) {
-                Toggle(isOn: $input.isFavorite) {
-                    Text("Save to Favorite")
-                        .font(.title2.bold())
-                }.padding(.horizontal)
-                    .onChange(of: input.isFavorite) { newValue in
-                        output.value.send(.favoriteTapped)
-                    }
-                Divider()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         
@@ -49,6 +41,7 @@ struct BookDetailView: View {
                         .frame(width: UIScreen.screenWidth, alignment: .leading)
                 }
             }.padding(.top)
+                .accessibilityIdentifier("bookDetailView")
         }.navigationBarHidden(true)
     }
     
