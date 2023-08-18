@@ -5,7 +5,7 @@
 //  Created by Anderson F Carvalho on 21/01/23.
 //
 
-import Foundation
+import UIKit
 
 internal class BookstoreDataSource {
     
@@ -14,23 +14,27 @@ internal class BookstoreDataSource {
     private let url = "volumes?q=ios&maxResults=20&startIndex=%i"
     
     let URLDefault = APIStrings.baseUrl
+    var apiCalling: APICalling!
+    var apiRequest: APIRequest!
+    
+    public init(apiCalling: APICalling = APICalling(),
+                apiRequest: APIRequest = APIRequest()) {
+        self.apiCalling = apiCalling
+        self.apiRequest = apiRequest
+    }
         
-    internal func booksFetch(_ page: Int, callBack: @escaping (Result<Bookstore, Error>) -> Void) {
+    internal func booksFetch(urlString: String? = nil, _ page: Int, callBack: @escaping (Result<Bookstore, BookError>) -> Void) {
         
-        let apiRequest = APIRequest()
-        let urlString = String(format: "\(URLDefault)\(url)", page)
-        apiRequest.baseURL = URL(string: urlString)
+        let urlString = urlString ?? String(format: "\(URLDefault)\(url)", page)
+        guard let url = URL(string: urlString),
+                UIApplication.shared.canOpenURL(url) else {
+            return callBack(.failure(BookError.URLError))
+        }
         
-        APICalling().fetch(apiRequest: apiRequest)
-            .sink(receiveCompletion: { error in
-                switch error {
-                case .finished:
-                    break
-                case .failure(let error):
-                    callBack(.failure(error))
-                }
-            }, receiveValue: { response in
-                callBack(.success(response))
-            }).store(in: token)
+        apiRequest.updateBaseURL(url)
+        
+        apiCalling.fetch(apiRequest: apiRequest) { response in
+            callBack(response)
+        }
     }
 }

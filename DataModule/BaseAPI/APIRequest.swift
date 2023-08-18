@@ -7,12 +7,22 @@
 
 import Foundation
 
-class APIRequest {
+public class APIRequest {
     var baseURL: URL!
     var method = "GET"
     var parameters = [String: String]()
     
-    func request(with baseURL: URL) -> URLRequest {
+    public init(method: String = "GET",
+                parameters: [String : String] = [String: String]()) {
+        self.method = method
+        self.parameters = parameters
+    }
+    
+    func updateBaseURL(_ url: URL) {
+        baseURL = url
+    }
+    
+    func request() -> URLRequest {
         var request = URLRequest(url: baseURL)
         request.httpMethod = method
         request.allHTTPHeaderFields = ["Accept" : "application/json"]

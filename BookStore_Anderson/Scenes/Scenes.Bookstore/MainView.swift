@@ -45,12 +45,12 @@ struct MainView: View {
             }.padding()
             ScrollView {
                 VStack {
-                    if let books = input.booksFiltered {
+                    if !input.booksFiltered.isEmpty {
                         LazyVGrid(columns: [GridItem(.fixed(imageWidth), spacing: 16),
                                             GridItem(.fixed(imageWidth), spacing: 16)]) {
-                            ForEach(books.indices, id: \.self) { index in
+                            ForEach(input.booksFiltered.indices, id: \.self) { index in
                                 HStack {
-                                    setItem(books[index].thumbnail)
+                                    setItem(input.booksFiltered[index].thumbnail)
                                 }.onTapGesture {
                                     output.value.send(.showDetail(index: index))
                                 }

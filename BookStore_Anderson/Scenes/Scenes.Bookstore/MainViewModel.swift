@@ -91,16 +91,20 @@ extension MainViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let bookStore):
-                if self.books.isEmpty {
-                    self.books = bookStore
-                } else {
-                    self.books.append(contentsOf: bookStore ?? [])
+                DispatchQueue.main.async {
+                    if self.books.isEmpty {
+                        self.books = bookStore
+                    } else {
+                        self.books.append(contentsOf: bookStore)
+                    }
+                    self.booksFiltered = self.books
+                    self.fetchStatus = .fetched
                 }
-                self.booksFiltered = self.books
-                self.fetchStatus = .fetched
             case .failure(let failure):
                 print(failure)
-                self.fetchStatus = .fetched
+                DispatchQueue.main.async {
+                    self.fetchStatus = .fetched
+                }
             }
         }
     }
